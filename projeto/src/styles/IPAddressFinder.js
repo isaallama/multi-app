@@ -65,6 +65,7 @@ export const ResultsContainer = styled.div`
   width: 100%;
 `;
 
+// Define o estilo do texto de erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;

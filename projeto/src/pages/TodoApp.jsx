@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Container, Title, Input, Button, TaskList, TaskItem, EditInput, ErrorMessage } from '../styles/TodoApp'; 
-import TaskService from '../services/TaskService';
+import { todoApp as TaskService } from '../services';
+
 
 const TodoApp = () => {
-  const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState([]);
-  const [editingTaskId, setEditingTaskId] = useState(null);
-  const [editingTaskText, setEditingTaskText] = useState('');
-  const [error, setError] = useState(null); 
+  const [task, setTask] = useState(''); // estado para armazenar o texto da tarefa
+  const [tasks, setTasks] = useState([]); // estado para armazenar as tarefas
+  const [editingTaskId, setEditingTaskId] = useState(null); // estado para armazenar o ID da tarefa em edição
+  const [editingTaskText, setEditingTaskText] = useState(''); // estado para armazenar o texto da tarefa em edição
+  const [error, setError] = useState(null);  // estado para armazenar erros
 
-  useEffect(() => {
+  useEffect(() => { // função para buscar as tarefas
     const fetchData = async () => {
       try {
         const tasksData = await TaskService.fetchTasks();
@@ -21,7 +22,7 @@ const TodoApp = () => {
     fetchData();
   }, []);
 
-  const addTask = async () => {
+  const addTask = async () => { // função assíncrona para adicionar uma tarefa
     try {
       if (task) {
         const newTask = await TaskService.addTask(task);
@@ -33,7 +34,7 @@ const TodoApp = () => {
     }
   };
 
-  const deleteTask = async (id) => {
+  const deleteTask = async (id) => { // função assíncrona para excluir uma tarefa
     try {
       await TaskService.deleteTask(id);
       setTasks(tasks.filter(task => task.id !== id));
@@ -42,7 +43,7 @@ const TodoApp = () => {
     }
   };
 
-  const updateTask = async (id) => {
+  const updateTask = async (id) => { // função assíncrona para atualizar uma tarefa
     try {
       await TaskService.updateTask(id, editingTaskText);
       setTasks(tasks.map(task => (task.id === id ? { ...task, text: editingTaskText } : task)));
@@ -61,7 +62,7 @@ const TodoApp = () => {
         type="text"
         value={task}
         onChange={(e) => setTask(e.target.value)}
-        placeholder="Add a new task"
+        placeholder="Adicione uma tarefa"
       />
       <Button onClick={addTask}>Add Task</Button>
       <TaskList>

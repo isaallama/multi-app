@@ -2,44 +2,44 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/tasks';
 
-const fetchTasks = async () => {
+const fetchTasks = async () => { // Função assíncrona para buscar as tarefas
   try {
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
-    console.error('Error fetching tasks:', error);
-    throw new Error('Unable to fetch tasks. Please try again later.');
+    console.error('Erro ao buscar tarefas:', error);
+    throw new Error('Não foi possível buscar as tarefas. Por favor, tente novamente');
   }
 };
 
-const addTask = async (task) => {
+const addTask = async (task) => { // Função assíncrona para adicionar uma tarefa
   try {
     const newTask = { text: task };
     const response = await axios.post(API_URL, newTask);
     return response.data;
   } catch (error) {
-    console.error('Error adding task:', error);
-    throw new Error('Unable to add task. Please try again later.');
+    console.error('Erro ao adicionar tarefa:', error);
+    throw new Error('Não foi possível adicionar a tarefa. Por favor, tente novamente');
   }
 };
 
-const deleteTask = async (id) => {
+const deleteTask = async (id) => { // Função assíncrona para excluir uma tarefa
   try {
     await axios.delete(`${API_URL}/${id}`);
   } catch (error) {
-    console.error(`Error deleting task with id ${id}:`, error);
-    throw new Error('Unable to delete task. Please try again later.');
+    console.error(`Erro ao deletar tarefa com id ${id}:`, error);
+    throw new Error('Não foi possível deletar a tarefa. Por favor, tente novamente');
   }
 };
 
-const updateTask = async (id, updatedText) => {
+const updateTask = async (id, updatedText) => { // Função assíncrona para atualizar uma tarefa
   try {
     const updatedTask = { text: updatedText };
     await axios.put(`${API_URL}/${id}`, updatedTask);
     return updatedTask;
   } catch (error) {
-    console.error(`Error updating task with id ${id}:`, error);
-    throw new Error('Unable to update task. Please try again later.');
+    console.error(`Erro ao atualizar tarefa com id ${id}:`, error);
+    throw new Error('Não foi possível atualizar a tarefa. Por favor, tente novamente');
   }
 };
 

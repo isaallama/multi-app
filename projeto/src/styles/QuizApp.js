@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-
+// Define o estilo do container principal
 export const Container = styled.div`
   display: flex; 
   flex-direction: column; 
@@ -14,7 +14,7 @@ export const Container = styled.div`
   margin: 50px auto;
 `;
 
-
+// Define o estilo do título
 export const Title = styled.h2`
   color: #333; 
   margin-bottom: 20px; 
@@ -22,7 +22,7 @@ export const Title = styled.h2`
   text-align: center; 
 `;
 
-
+// Define o estilo da pergunta
 export const Question = styled.p`
   color: #555;
   font-size: 20px; 
@@ -30,7 +30,7 @@ export const Question = styled.p`
   text-align: center; 
 `;
 
-
+// Define o estilo dos botoes
 export const OptionButton = styled.button`
   padding: 12px 20px; 
   background-color: #007bff; 
@@ -53,7 +53,7 @@ export const OptionButton = styled.button`
   }
 `;
 
-
+// Define o estilo do score
 export const Score = styled.p`
   color: #333; 
   font-size: 20px; 
@@ -61,7 +61,7 @@ export const Score = styled.p`
   text-align: center;
 `;
 
-
+// Define o estilo do erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;

@@ -3,18 +3,18 @@ import { Container, Title, Question, OptionButton, Score, ErrorMessage } from '.
 import QuizService from '../services/QuizService'; 
 
 const QuizApp = () => {
-  const [score, setScore] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0); // Estado para armazenar o score
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Novo estado para controlar a questão
   const [error, setError] = useState(null); // Novo estado para capturar erros
 
-  let questions = [];
+  let questions = []; // Array para armazenar as questões
   try {
     questions = QuizService.getQuestions();
   } catch (error) {
     setError(error.message);
   }
 
-  const handleAnswer = (answer) => {
+  const handleAnswer = (answer) => { // Função para responder as questões
     try {
       if (QuizService.checkAnswer(answer, questions[currentQuestion].answer)) {
         setScore(score + 1);

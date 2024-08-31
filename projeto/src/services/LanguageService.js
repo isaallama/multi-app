@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-// Definindo uma URL base para futuras requisições
 const BASE_URL = 'https://api.mymemory.translated.net/get';
 
-const translateText = async (text, sourceLang, targetLang) => {
+const translateText = async (text, sourceLang, targetLang) => { // Função assíncrona para traduzir um texto
   try {
-    // Verifica se os parâmetros são válidos
     if (!text || !sourceLang || !targetLang) {
-      throw new Error('Missing required parameters for translation.');
+      throw new Error('Parametros inválidos');
     }
 
     const response = await axios.get(BASE_URL, {
@@ -16,21 +14,19 @@ const translateText = async (text, sourceLang, targetLang) => {
         langpair: `${sourceLang}|${targetLang}`,
       },
       headers: {
-        // Adicione cabeçalhos se necessário, por exemplo:
-        // 'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
     });
 
-    // Verifica se a resposta contém erros
-    if (response.data.responseStatus !== 200) {
-      throw new Error('Error from translation service.');
+  
+    if (response.data.responseStatus !== 200) {   // Verifica se a resposta contém erros
+      throw new Error('Erro ao traduzir o texto');
     }
 
     return response.data.responseData.translatedText;
   } catch (error) {
-    console.error('Error translating text:', error.message);
-    // Lança uma nova mensagem de erro para ser capturada pelo componente
-    throw new Error('Unable to translate text. Please try again later.');
+    console.error('Erro ao traduzir o texto:', error.message); // Lança uma nova mensagem de erro para ser capturada pelo componente
+    throw new Error('Não foi possível traduzir o texto. Por favor, tente novamente');
   }
 };
 

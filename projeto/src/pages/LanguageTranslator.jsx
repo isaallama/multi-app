@@ -4,12 +4,12 @@ import { Container, Title, Input, Button, Label, Select, TranslatedText, ErrorMe
 import LanguageService from '../services/LanguageService';
 
 const LanguageTranslator = () => {
-  const [text, setText] = useState('');
-  const [translatedText, setTranslatedText] = useState('');
-  const [sourceLang, setSourceLang] = useState('en');
-  const [targetLang, setTargetLang] = useState('es');
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [text, setText] = useState(''); // Armazena o texto a ser traduzido
+  const [translatedText, setTranslatedText] = useState(''); // Armazena o texto traduzido
+  const [sourceLang, setSourceLang] = useState('en'); // Idioma de origem
+  const [targetLang, setTargetLang] = useState('es'); // Idioma de destino
+  const [error, setError] = useState(null); // Novo estado para capturar erros
+  const [loading, setLoading] = useState(false); // Novo estado para controlar o carregamento
 
   const translateText = useCallback(
     debounce(async (text) => {
@@ -23,7 +23,7 @@ const LanguageTranslator = () => {
         setTranslatedText(translation);
         setError(null); // Limpa o erro anterior
       } catch (error) {
-        setError(error.message || 'An unexpected error occurred.');
+        setError(error.message || 'Ocorreu um erro inesperado. Por favor, tente novamente.');
       } finally {
         setLoading(false);
       }
@@ -66,7 +66,7 @@ const LanguageTranslator = () => {
         type="text"
         value={text}
         onChange={handleTextChange}
-        placeholder="Enter text to translate"
+        placeholder="Digite o texto que deseja traduzir."
       />
       {translatedText && <TranslatedText>{translatedText}</TranslatedText>}
     </Container>

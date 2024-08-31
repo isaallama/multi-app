@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Define o estilo do container principal
 export const Container = styled.div`
   display: flex; 
   flex-direction: column; 
@@ -13,7 +14,7 @@ export const Container = styled.div`
   margin: 50px auto; 
 `;
 
-
+// Define o estilo do título
 export const Title = styled.h2`
   color: #333; 
   margin-bottom: 20px; 
@@ -21,7 +22,7 @@ export const Title = styled.h2`
   text-align: center; 
 `;
 
-
+// Define o estilo do campo de entrada
 export const Input = styled.input`
   margin-bottom: 20px; 
   padding: 12px; 
@@ -38,7 +39,7 @@ export const Input = styled.input`
   }
 `;
 
-
+// Define o estilo do container do QRCODE
 export const QRCodeContainer = styled.div`
   margin-top: 20px; 
   padding: 20px; 
@@ -47,6 +48,7 @@ export const QRCodeContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 `;
 
+// Define o estilo do erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;

@@ -10,13 +10,13 @@ import {
   FaBars,
   FaArrowLeft
 } from 'react-icons/fa'
-import QRCodeGenerator from './components/QRCodeGenarator'
-import IPAddressFinder from './components/IPAddressFinder'
-import MovieSearchEngine from './components/MovieSearchEngine'
-import TodoApp from './components/TodoApp'
-import QuizApp from './components/QuizApp'
-import LanguageTranslator from './components/LanguageTranslator'
-import Login from './components/Login'
+import QRCodeGenerator from './pages/QRCodeGenarator'
+import IPAddressFinder from './pages/IPAddressFinder'
+import MovieSearchEngine from './pages/MovieSearchEngine'
+import TodoApp from './pages/TodoApp'
+import QuizApp from './pages/QuizApp'
+import LanguageTranslator from './pages/LanguageTranslator'
+import Login from './pages/Login'
 import checkAndRenewToken from './utils/checkAndRenewToken'  
 import './App.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -31,7 +31,7 @@ import {
   CarouselItem,
   ReturnButton,
   CustomCarousel
-} from 'styled-components'
+} from './styles/App'
 
 
 const App = () => {

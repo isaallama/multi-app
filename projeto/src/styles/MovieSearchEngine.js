@@ -1,5 +1,6 @@
 import styled from 'styled-components'; 
 
+// Define o estilo do container principal
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@ export const Container = styled.div`
   margin: 50px auto;
 `;
 
-
+// Define o estilo do título
 export const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
@@ -20,7 +21,7 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
-
+// Define o estilo do campo de entrada
 export const Input = styled.input`
   margin-bottom: 20px;
   padding: 12px;
@@ -37,7 +38,7 @@ export const Input = styled.input`
   }
 `;
 
-
+// Define o estilo do botão
 export const Button = styled.button`
   padding: 12px 20px;
   background-color: #007bff;
@@ -53,7 +54,7 @@ export const Button = styled.button`
   }
 `;
 
-
+// Define o estilo do container de filmes
 export const MoviesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -65,6 +66,7 @@ export const MoviesContainer = styled.div`
 `;
 
 
+// Define o estilo do card de filme
 export const MovieCard = styled.div`
   background: #f9f9f9;
   border-radius: 10px;
@@ -98,6 +100,7 @@ export const MovieCard = styled.div`
   }
 `;
 
+// Define o estilo do erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;

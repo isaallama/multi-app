@@ -3,13 +3,13 @@ import QRCode from 'qrcode.react';
 import { Container, Title, Input, QRCodeContainer, ErrorMessage } from '../styles/QRCodeGenerator';
 
 const QRCodeGenerator = () => {
-  const [text, setText] = useState('');
-  const [error, setError] = useState('');
+  const [text, setText] = useState(''); // Texto para gerar o QRCODE
+  const [error, setError] = useState(''); // Novo estado para capturar erros
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { // Função para capturar o texto digitado pelo usuário
     const input = e.target.value;
     if (input.trim() === '') {
-      setError('Text cannot be empty.');
+      setError('O campo não deve estar vazio');
     } else {
       setError('');
       setText(input);
@@ -23,7 +23,7 @@ const QRCodeGenerator = () => {
         type="text"
         value={text}
         onChange={handleChange}
-        placeholder="Enter text to encode"
+        placeholder="Digite o texto para gerar o QRCODE"
       />
       {error && <ErrorMessage>{error}</ErrorMessage>} 
       {text && !error && (

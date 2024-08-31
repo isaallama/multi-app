@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Define o estilo do container principal
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +14,7 @@ export const Container = styled.div`
   margin: 50px auto;
 `;
 
+// Define o estilo do título
 export const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
@@ -20,14 +22,14 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
-
+// Define o estilo do campo de entrada
 export const Label = styled.label`
   color: #555;
   font-size: 16px;
   margin-right: 10px;
 `;
 
-
+// Define o estilo do campo de entrada
 export const Select = styled.select`
   margin-bottom: 20px;
   padding: 10px;
@@ -42,7 +44,7 @@ export const Select = styled.select`
   }
 `;
 
-
+// Define o estilo do campo de entrada
 export const Input = styled.input`
   margin-bottom: 20px;
   padding: 12px;
@@ -59,7 +61,7 @@ export const Input = styled.input`
   }
 `;
 
-
+// Define o estilo do botão
 export const Button = styled.button`
   padding: 12px 20px;
   background-color: #007bff;
@@ -76,7 +78,7 @@ export const Button = styled.button`
   }
 `;
 
-
+// Define o estilo do texto traduzido
 export const TranslatedText = styled.p`
   color: #333;
   font-size: 18px;
@@ -88,8 +90,25 @@ export const TranslatedText = styled.p`
   text-align: center;
 `;
 
+// Define o estilo do erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;
   font-weight: bold;
 `;
+export const Loader = styled.div`
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;  

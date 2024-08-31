@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Define o estilo do container principal
 export const Container = styled.div`
   display: flex; 
   flex-direction: column; 
@@ -13,7 +14,7 @@ export const Container = styled.div`
   margin: 50px auto; 
 `;
 
-
+// Define o estilo do título
 export const Title = styled.h2`
   color: #333; 
   margin-bottom: 20px; 
@@ -21,7 +22,7 @@ export const Title = styled.h2`
   text-align: center; 
 `;
 
-
+// Define o estilo do campo de entrada
 export const Input = styled.input`
   margin-bottom: 20px; 
   padding: 12px; 
@@ -38,6 +39,7 @@ export const Input = styled.input`
   }
 `;
 
+// Define o estilo do botão
 export const Button = styled.button`
   padding: 12px 20px; 
   background-color: #007bff; 
@@ -54,14 +56,14 @@ export const Button = styled.button`
   }
 `;
 
-
+// Define o estilo da lista de tarefas
 export const TaskList = styled.ul`
   list-style-type: none; 
   padding: 0; 
   width: 100%; 
 `;
 
-
+// Define o estilo de cada tarefa
 export const TaskItem = styled.li`
   background: #f9f9f9; 
   border-radius: 5px; 
@@ -92,7 +94,7 @@ export const TaskItem = styled.li`
   }
 `;
 
-
+// Define o estilo do campo de edição
 export const EditInput = styled.input`
   margin-left: 10px; 
   padding: 6px; 
@@ -109,6 +111,7 @@ export const EditInput = styled.input`
   }
 `;
 
+// Define o estilo do erro
 export const ErrorMessage = styled.div`
   color: red;
   margin: 10px 0;

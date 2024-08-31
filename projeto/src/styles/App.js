@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Carousel } from "react-responsive-carousel";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 // Estiliza o contêiner principal do aplicativo.

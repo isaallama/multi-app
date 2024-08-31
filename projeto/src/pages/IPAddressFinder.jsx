@@ -1,13 +1,16 @@
 import { useState } from 'react'; 
 import { Container, Title, Input, Button, ResultsContainer, ErrorMessage } from '../styles/IPAddressFinder';
-import IPService from '../services/IPService'; 
+
+
+
 
 const IPAddressFinder = () => {
-  const [ip, setIp] = useState(''); 
-  const [ipData, setIpData] = useState(null); 
+  const [ip, setIp] = useState(''); // Estado para armazenar o IP digitado pelo usuário
+  const [ipData, setIpData] = useState(null); // Estado para armazenar as informações do IP
   const [error, setError] = useState(null); // Novo estado para capturar erros
 
-  const getIP = async () => {
+
+  const getIP = async () => {     // Função assíncrona para buscar informações do IP e atualizar o estado
     try {
       const response = await IPService.findIp(ip);
       setIpData(response);
@@ -25,7 +28,7 @@ const IPAddressFinder = () => {
         type="text"
         value={ip} 
         onChange={(e) => setIp(e.target.value)} 
-        placeholder="Enter IP address" 
+        placeholder="Digite o endereço IP" 
       />
       <Button onClick={getIP}>Find IP</Button> 
       {ipData && (

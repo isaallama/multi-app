@@ -1,7 +1,7 @@
-import jwtDecode from 'jwt-decode';
-import { setStorage, getStorage } from '../stage';
+import { jwtDecode } from 'jwt-decode';
+import { setStorage, getStorage } from './Stage';
 
-const checkAndRenewToken = async () => {
+const checkAndRenewToken = async () => { // Função assíncrona para renovar o token
     const token = getStorage('token');
     if (!token) return;
   
@@ -19,7 +19,7 @@ const checkAndRenewToken = async () => {
         });
   
         if (!response.ok) {
-          throw new Error('Failed to renew token');
+          throw new Error('Falha ao renovar token');
         }
   
         const { token: newToken } = await response.json();
