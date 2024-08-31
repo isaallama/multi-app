@@ -1,4 +1,4 @@
-# **My Web Application Suite**
+# **Multi-App**
 
 This repository contains a collection of web applications built using React.js, each with a specific functionality. Below are the applications included in this suite:
 
