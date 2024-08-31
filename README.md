@@ -33,6 +33,7 @@ npm start
 The application will be available at http://localhost:3000 in your browser.
 
 # About the applications
+
 ## Todo App
 A simple and intuitive Todo application that allows users to manage their tasks.
 
@@ -45,7 +46,7 @@ A simple and intuitive Todo application that allows users to manage their tasks.
 - Add a task by typing in the input field and clicking "Add Task".
 - Edit or delete a task using the corresponding buttons next to each task.
 
----
+
 
 ## IP Address Finder
 Find detailed information about an IP address, including location and ISP.
@@ -58,7 +59,7 @@ Find detailed information about an IP address, including location and ISP.
 - Enter an IP address in the input field and click "Find IP".
 - The details of the IP will be displayed below the input field.
 
----
+
 
 ## Language Translator
 Translate text between different languages using an external translation API.
@@ -72,7 +73,7 @@ Translate text between different languages using an external translation API.
 - Select the source and target languages from the dropdowns.
 - Enter the text to be translated and click "Translate".
 
----
+
 
 ## Movie Search Engine
 Search for movies using the OMDb API and view basic details.
@@ -86,7 +87,7 @@ Search for movies using the OMDb API and view basic details.
 - Enter a movie title in the search field and click "Search".
 - The results will be displayed as a list of movie cards.
 
----
+
 
 ## Quiz App
 A simple quiz application to test your knowledge with multiple-choice questions.
@@ -99,7 +100,7 @@ A simple quiz application to test your knowledge with multiple-choice questions.
 - Answer the questions by selecting an option.
 - Your score will be displayed at the end of the quiz.
 
----
+
 
 ## QR Code Generator
 Generate a QR code for any text input.
