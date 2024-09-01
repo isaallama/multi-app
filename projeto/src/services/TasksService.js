@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/tasks';
 
-const fetchTasks = async () => { // Função assíncrona para buscar as tarefas
+const fetchTasks = async () => {
   try {
     const response = await axios.get(API_URL);
     return response.data;
@@ -12,7 +12,7 @@ const fetchTasks = async () => { // Função assíncrona para buscar as tarefas
   }
 };
 
-const addTask = async (task) => { // Função assíncrona para adicionar uma tarefa
+const addTask = async (task) => {
   try {
     const newTask = { text: task };
     const response = await axios.post(API_URL, newTask);
@@ -23,7 +23,7 @@ const addTask = async (task) => { // Função assíncrona para adicionar uma tar
   }
 };
 
-const deleteTask = async (id) => { // Função assíncrona para excluir uma tarefa
+const deleteTask = async (id) => {
   try {
     await axios.delete(`${API_URL}/${id}`);
   } catch (error) {
@@ -32,7 +32,7 @@ const deleteTask = async (id) => { // Função assíncrona para excluir uma tare
   }
 };
 
-const updateTask = async (id, updatedText) => { // Função assíncrona para atualizar uma tarefa
+const updateTask = async (id, updatedText) => {
   try {
     const updatedTask = { text: updatedText };
     await axios.put(`${API_URL}/${id}`, updatedTask);
@@ -44,4 +44,3 @@ const updateTask = async (id, updatedText) => { // Função assíncrona para atu
 };
 
 export default { fetchTasks, addTask, deleteTask, updateTask };
-
