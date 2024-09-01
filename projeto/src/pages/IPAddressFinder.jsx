@@ -1,7 +1,6 @@
 import { useState } from 'react'; 
 import { Container, Title, Input, Button, ResultsContainer, ErrorMessage } from '../styles/IPAddressFinder';
-
-
+import IPService from '../services/IPServices';
 
 
 const IPAddressFinder = () => {
