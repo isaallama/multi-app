@@ -2,27 +2,27 @@ import { useState, useEffect } from 'react';
 import { Container, Title, Input, Button, TaskList, TaskItem, EditInput, ErrorMessage } from '../styles/TodoApp'; 
 import { todoApp as TaskService } from '../services';
 
-
 const TodoApp = () => {
-  const [task, setTask] = useState(''); // estado para armazenar o texto da tarefa
-  const [tasks, setTasks] = useState([]); // estado para armazenar as tarefas
-  const [editingTaskId, setEditingTaskId] = useState(null); // estado para armazenar o ID da tarefa em edição
-  const [editingTaskText, setEditingTaskText] = useState(''); // estado para armazenar o texto da tarefa em edição
-  const [error, setError] = useState(null);  // estado para armazenar erros
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
+  const [editingTaskId, setEditingTaskId] = useState(null);
+  const [editingTaskText, setEditingTaskText] = useState('');
+  const [error, setError] = useState(null);
 
-  useEffect(() => { // função para buscar as tarefas
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const tasksData = await TaskService.fetchTasks();
         setTasks(tasksData);
       } catch (error) {
+        console.error('Erro ao buscar tarefas:', error);
         setError(error.message);
       }
     };
     fetchData();
   }, []);
 
-  const addTask = async () => { // função assíncrona para adicionar uma tarefa
+  const addTask = async () => {
     try {
       if (task) {
         const newTask = await TaskService.addTask(task);
@@ -30,34 +30,42 @@ const TodoApp = () => {
         setTask('');
       }
     } catch (error) {
+      console.error('Erro ao adicionar tarefa:', error);
       setError(error.message);
     }
   };
 
-  const deleteTask = async (id) => { // função assíncrona para excluir uma tarefa
+  const deleteTask = async (id) => {
     try {
       await TaskService.deleteTask(id);
       setTasks(tasks.filter(task => task.id !== id));
     } catch (error) {
+      console.error('Erro ao deletar tarefa:', error);
       setError(error.message);
     }
   };
 
-  const updateTask = async (id) => { // função assíncrona para atualizar uma tarefa
+  const updateTask = async (id) => {
     try {
       await TaskService.updateTask(id, editingTaskText);
       setTasks(tasks.map(task => (task.id === id ? { ...task, text: editingTaskText } : task)));
       setEditingTaskId(null);
       setEditingTaskText('');
     } catch (error) {
+      console.error('Erro ao atualizar tarefa:', error);
       setError(error.message);
     }
+  };
+
+  const editTask = (id, text) => {
+    setEditingTaskId(id);
+    setEditingTaskText(text);
   };
 
   return (
     <Container>
       <Title>Todo App</Title>
-      {error && <ErrorMessage>{error}</ErrorMessage>} 
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <Input
         type="text"
         value={task}
