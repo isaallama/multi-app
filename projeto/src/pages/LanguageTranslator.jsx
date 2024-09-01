@@ -30,9 +30,9 @@ const LanguageTranslator = () => {
     }, 500), [sourceLang, targetLang]
   );
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e) => { // Função para capturar o texto digitado pelo usuário
     setText(e.target.value);
-    translateText(e.target.value); // Inicia a tradução com debounce
+    translateText(e.target.value); 
   };
 
   return (
