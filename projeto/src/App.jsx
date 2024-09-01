@@ -17,7 +17,7 @@ import TodoApp from './pages/TodoApp'
 import QuizApp from './pages/QuizApp'
 import LanguageTranslator from './pages/LanguageTranslator'
 import Login from './pages/Login'
-import checkAndRenewToken from './utils/checkAndRenewToken'  
+import checkAndRenewToken from './utils/CheckAndRenewToken'  
 import './App.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import {
